@@ -39,20 +39,13 @@ class WifiBulb(object):
     def setColor(self, color):
         """sets the color the given tuple in the format (R, G, B)"""
         print("Sending color: " + str(color))
-        # the structure of the packets sent to the light are
-        # pattern, red, green, blue, "00f00f", some 1 byte checksum?
-        # this is a work in progress. planned to use the different patterns
-        # I have yet to establish a pattern between the colors and the checksum
-        # but since it's only 255 bytes, I don't think it's too big of a deal to just go with it for now
-
-        # attempting to generate checksums
-        for x in range(255):
-            # mode + red + green + blue + magicBytes + checksum
-            message = WifiBulb.mode + format(color[0], "02x") + format(color[1], "02x") + format(color[2], "02x") + WifiBulb.magicBytes 
-            messageBytes = bytearray.fromhex(message)
-            checksum = getChecksumValue(messageBytes)
-            messageBytes.append(checksum)
-            try:
-                self.s.send(messageBytes)
-            except:
-                print("Failed to set color")
+        
+        # mode + red + green + blue + magicBytes + checksum
+        message = WifiBulb.mode + format(color[0], "02x") + format(color[1], "02x") + format(color[2], "02x") + WifiBulb.magicBytes 
+        messageBytes = bytearray.fromhex(message)
+        checksum = getChecksumValue(messageBytes)
+        messageBytes.append(checksum)
+        try:
+            self.s.send(messageBytes)
+        except:
+            print("Failed to set color")
