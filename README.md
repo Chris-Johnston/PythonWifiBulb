@@ -13,7 +13,7 @@ python3 WifiBulb.py 192.168.x.x 255 0 0
 
 ### Code Example
 
-A test usage can be seen in [testProgram.py](WifiLight/testProgram.py), however here's a brief snippet:
+A test usage can be seen in [sampleProgram.py](src/sampleProgram.py), however here's a brief snippet:
 ```python
 # import the class
 from WifiBulb import WifiBulb
