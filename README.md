@@ -1,4 +1,4 @@
-# PythonWifiLedBulbController
+# PythonWifiBulb
 A python script and class for controlling "MagicLight Wifi Smart LED Light Bulbs" without the use of the mobile app.
 
 ## Usage
