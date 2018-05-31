@@ -195,6 +195,8 @@ if __name__ == "__main__":
     bulb = WifiBulb(sys.argv[1])
     # connect
     bulb.connect()
+
+    bulb.warmwhite()
     # setColor
     # color = (int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
     # bulb.setColor(color)
@@ -203,15 +205,15 @@ if __name__ == "__main__":
     # bulb.testing()
     # bulb.sevenColorJumpingChange(1)
 
-    bulb.customMode(
-        [
-            (255, 0, 0, 0),
-            (0, 0, 255, 0),
-            # (255, 0, 0, 255),
-        ],
-        # speed goes between 0x1f and 1, where 1 is faster
-        MODE_CUSTOM_GRADUAL, 1
-    )
+    #bulb.customMode(
+    #    [
+    #        (255, 0, 0, 0),
+    #        (0, 0, 255, 0),
+    #        # (255, 0, 0, 255),
+    #    ],
+    #    # speed goes between 0x1f and 1, where 1 is faster
+    #    MODE_CUSTOM_GRADUAL, 1
+    #)
 
 
 

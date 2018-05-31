@@ -12,3 +12,27 @@ AT+Z
 AT+Z
 AT+Q
 AT+Q
+
+
+# and i think that this was it restarting itself
+
+HF-A11ASSISTHREAD10.42.0.232,ACCF23A6A9DA,HF-LPB100-ZJ2001+okAT+WMODE
++ok=STA
+
+AT+WSLK
++ok=impostor(0:C0:CA:96:E7:5E)
+
+AT+WSSSID
++ok=impostor
+
+AT+WSKEY
++ok=WPA2PSK,AES,VLmRNY0v
+
+AT+WAP
++ok=11BGN,LEDnetA6A9DA,CH1
+
+AT+WAKEY
++ok=OPEN,NONE
+
+AT+Q
+AT+Q
