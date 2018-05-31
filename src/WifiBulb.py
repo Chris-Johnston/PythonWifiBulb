@@ -3,6 +3,7 @@ import sys
 import binascii
 
 import time
+import random
 
 # Mode for setting RGB color
 MODE_RGB = '31'
@@ -59,8 +60,8 @@ class WifiBulb(object):
             self.s.send(b)
             # send it NOW
             # self.s.flush()
-        except:
-            print("Failed to set color!")
+        except Exception as e:
+            print("Failed to set color!", str(e))
 
     def disconnect(self):
         """ disconnects the socket """
@@ -186,8 +187,6 @@ class WifiBulb(object):
         self._sendmessage(message)
 
 
-
-
 # allow CLI for setting colors
 #python3 WifiBulb.py <IP> <R> <G> <B>
 # this should be expanded, could include warmwhite
@@ -206,15 +205,12 @@ if __name__ == "__main__":
 
     bulb.customMode(
         [
-            (255, 255, 255, 0),
             (255, 0, 0, 0),
-            (0, 255, 0, 0),
             (0, 0, 255, 0),
-            (0, 0, 0, 255),
             # (255, 0, 0, 255),
         ],
         # speed goes between 0x1f and 1, where 1 is faster
-        MODE_CUSTOM_STROBE, 1
+        MODE_CUSTOM_GRADUAL, 1
     )
 
 
