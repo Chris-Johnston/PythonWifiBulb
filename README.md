@@ -1,6 +1,15 @@
 # PythonWifiBulb
 A python script and class for controlling "MagicLight Wifi Smart LED Light Bulbs" without the use of the mobile app.
 
+## Note
+I had been developing this library myself by reverse engineering the network traffic using Wireshark.
+Only recently I found [Danielhiversen/flux_led](https://github.com/Danielhiversen/flux_led) 
+which serves the same purposes of this library, but with a more complete implementation. I would recommend using this
+library instead, since it is more complete.
+
+That being said, I'm glad I could use this more complete library as a way to check my work. We came across many of the same
+magic numbers and structures of the message contents.
+
 ## Usage
 Your bulb must be connected to your local network, as set up inside the app. You can get the bulb's IP address from inside the app.
 
